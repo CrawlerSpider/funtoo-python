@@ -1,4 +1,4 @@
-funtoo python Overlay
+Funtoo Python Overlay
 ================
 
 This is a "python" overlay -- an empty overlay to use as the starting point
