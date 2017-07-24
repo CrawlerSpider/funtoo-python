@@ -1,7 +1,7 @@
-Skeleton Overlay
+Funtoo Python Overlay
 ================
 
-This is a "skeleton" overlay -- an empty overlay to use as the starting point
+This is a "python" overlay -- an empty overlay to use as the starting point
 for collaborating with Funtoo Linux. To start using the overlay, perform the
 following steps:
 
