@@ -7,7 +7,7 @@ EAPI=6
 PYTHON_COMPAT=( python2_7 python3_{4,5} )
 PYTHON_REQ_USE="sqlite(+)"
 
-inherit distutils-r1 eutils
+inherit distutils-r1 
 
 DESCRIPTION="A high-level Python Screen Scraping framework"
 HOMEPAGE="https://github.com/scrapy/scrapy/ http://pypi.python.org/pypi/Scrapy/"

@@ -5,7 +5,7 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_{4,5} )
 
-inherit eutils distutils-r1
+inherit distutils-r1
 
 DESCRIPTION="Python library to extract data from XML/HTML"
 HOMEPAGE="https://github.com/scrapy/parsel"
@@ -20,12 +20,11 @@ RDEPEND="
     >=dev-python/six-1.9.0[${PYTHON_USEDEP}]
     >=dev-python/lxml-3.4.4[${PYTHON_USEDEP}]
     >=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
-    >=dev-python/w3lib-1.15.0[${PYTHON_USEDEP}]
-    dev-python/pytest-runner[${PYTHON_USEDEP}]"
-
+    >=dev-python/w3lib-1.15.0[${PYTHON_USEDEP}]"
 
 DEPEND="
     dev-python/setuptools[${PYTHON_USEDEP}]
+    dev-python/pytest-runner[${PYTHON_USEDEP}]
     doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
     test? ( dev-python/lxml[${PYTHON_USEDEP}]
             dev-python/pytest[${PYTHON_USEDEP}] )"
@@ -45,9 +44,5 @@ src_compile() {
     if use doc; then
         esetup.py build_sphinx || die
     fi
-}
-
-python_test() {
-    "${PYTHON}" ${PN}/tests.py -v || die "Tests fail with ${EPYTHON}"
 }
 

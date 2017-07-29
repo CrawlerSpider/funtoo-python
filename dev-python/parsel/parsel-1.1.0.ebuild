@@ -5,7 +5,7 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_{4,5} )
 
-inherit eutils distutils-r1
+inherit distutils-r1
 
 DESCRIPTION="Python library to extract data from XML/HTML"
 HOMEPAGE="https://github.com/scrapy/parsel"
