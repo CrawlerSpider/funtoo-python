@@ -20,7 +20,7 @@ RDEPEND="
     >=dev-python/six-1.9.0[${PYTHON_USEDEP}]
     >=dev-python/lxml-3.4.4[${PYTHON_USEDEP}]
     >=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
-    >=dev-python/w3lib-1.11.0[${PYTHON_USEDEP}]"
+    >=dev-python/w3lib-1.15.0[${PYTHON_USEDEP}]"
 
 DEPEND="
     dev-python/setuptools[${PYTHON_USEDEP}]
