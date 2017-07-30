@@ -18,3 +18,4 @@ IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-python/six-1.4.1[${PYTHON_USEDEP}]"
+

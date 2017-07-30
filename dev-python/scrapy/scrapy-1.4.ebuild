@@ -25,8 +25,9 @@ RDEPEND="
     >=dev-python/parsel-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/lxml-3.4[${PYTHON_USEDEP}]
 	ibl? ( dev-python/numpy[${PYTHON_USEDEP}] )
-	ssl? ( >=dev-python/pyopenssl-0.14[${PYTHON_USEDEP}] 
-             dev-python/cryptography[${PYTHON_USEDEP}] )
+	ssl? (
+		>=dev-python/pyopenssl-0.14[${PYTHON_USEDEP}] 
+		dev-python/cryptography[${PYTHON_USEDEP}] )
 	boto? ( dev-python/boto3[${PYTHON_USEDEP}] )
 	>=dev-python/twisted-14.0[${PYTHON_USEDEP}]
 	>=dev-python/w3lib-1.8.0[${PYTHON_USEDEP}]
@@ -35,7 +36,8 @@ RDEPEND="
 	>=dev-python/six-1.5.2[${PYTHON_USEDEP}]
 	dev-python/service_identity[${PYTHON_USEDEP}]
 	"
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? ( ${RDEPEND}
 		dev-python/mock[${PYTHON_USEDEP}]
@@ -43,7 +45,8 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 		=dev-python/netlib-0.10.1[${PYTHON_USEDEP}]
 		dev-python/jmespath[${PYTHON_USEDEP}]
 		dev-python/testfixtures[${PYTHON_USEDEP}]
-		net-ftp/vsftpd )"
+		net-ftp/vsftpd 
+	)"
 # pytest-twisted listed as a test dep but not in portage.
 # Testsuite currently survives without it, so appears optional
 
@@ -76,3 +79,4 @@ python_install_all() {
 	use doc && local HTML_DOCS=( docs/build/html/. )
 	distutils-r1_python_install_all
 }
+
