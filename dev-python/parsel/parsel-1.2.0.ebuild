@@ -19,16 +19,18 @@ RDEPEND="
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/lxml-3.4.4[${PYTHON_USEDEP}]
 	>=dev-python/cssselect-0.9.1[${PYTHON_USEDEP}]
-	>=dev-python/w3lib-1.15.0[${PYTHON_USEDEP}]"
+	>=dev-python/w3lib-1.17.0[${PYTHON_USEDEP}]"
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/pytest-runner[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}]	)"
+	test? ( dev-python/pytest-runner[${PYTHON_USEDEP}] )"
 
 pkg_setup() {
-	use doc && local HTML_DOCS=( docs/_build/html/. )
+	if use doc; then
+		use doc && local HTML_DOCS=( docs/_build/html/. )
+	fi
 }
 
 src_prepare() {
