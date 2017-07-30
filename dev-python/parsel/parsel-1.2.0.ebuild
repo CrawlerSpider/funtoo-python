@@ -32,8 +32,7 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
-src_compile() {
-	distutils-r1_src_compile
+python_compile_all() {
 	if use doc; then
 		esetup.py build_sphinx || die
 		HTML_DOCS=( docs/_build/html/. )
