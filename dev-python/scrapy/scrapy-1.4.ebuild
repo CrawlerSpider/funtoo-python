@@ -34,19 +34,18 @@ RDEPEND="
 	dev-python/queuelib[${PYTHON_USEDEP}]
 	>=dev-python/cssselect-0.9[${PYTHON_USEDEP}]
 	>=dev-python/six-1.5.2[${PYTHON_USEDEP}]
-	dev-python/service_identity[${PYTHON_USEDEP}]
-	"
+	dev-python/service_identity[${PYTHON_USEDEP}]"
+
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	test? ( ${RDEPEND}
+	test? (
 		dev-python/mock[${PYTHON_USEDEP}]
 		=net-proxy/mitmproxy-0.10.1[${PYTHON_USEDEP}]
 		=dev-python/netlib-0.10.1[${PYTHON_USEDEP}]
 		dev-python/jmespath[${PYTHON_USEDEP}]
 		dev-python/testfixtures[${PYTHON_USEDEP}]
-		net-ftp/vsftpd 
-	)"
+		net-ftp/vsftpd)"
 # pytest-twisted listed as a test dep but not in portage.
 # Testsuite currently survives without it, so appears optional
 

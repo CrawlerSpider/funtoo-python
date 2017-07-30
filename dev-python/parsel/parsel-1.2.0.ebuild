@@ -6,7 +6,7 @@ PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
 inherit distutils-r1
 
-DESCRIPTION="Python library to extract data from XML/HTML"
+DESCRIPTION="A library to extract data from HTML and XML using XPath and CSS selectors"
 HOMEPAGE="https://github.com/scrapy/parsel"
 SRC_URI="mirror://pypi/${P:0:1}/${PN}/${P}.tar.gz"
 
@@ -26,21 +26,16 @@ DEPEND="
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? ( dev-python/pytest-runner[${PYTHON_USEDEP}] )"
 
-pkg_setup() {
-	if use doc; then
-		use doc && local HTML_DOCS=( docs/_build/html/. )
-	fi
-}
-
-src_prepare() {
+python_prepare_all() {
 	# prevent non essential d'load of files in doc build
 	sed -e 's:intersphinx_:#&:' -i docs/conf.py || die
-	distutils-r1_src_prepare
+	distutils-r1_python_prepare_all
 }
 
 src_compile() {
 	distutils-r1_src_compile
 	if use doc; then
 		esetup.py build_sphinx || die
+		HTML_DOCS=( docs/_build/html/. )
 	fi
 }
